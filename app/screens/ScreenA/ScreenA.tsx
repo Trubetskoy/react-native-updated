@@ -1,10 +1,10 @@
+// @ts-ignore
 import React from 'react';
 import {Button} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {ViewWrapper, TextElement} from '../../elements';
 import {increment, decrement} from '../../actions';
-import {State} from '../../config/store';
 
 interface Props {
   navigation: {
@@ -17,7 +17,7 @@ const ScreenA: React.FC<Props> = props => {
 
   const dispatch = useDispatch();
 
-  const value = useSelector((state: State) => state.main.value);
+  const value = useSelector((state: {main: any}) => state.main.value);
 
   const incrementFunction = () => dispatch(increment());
 
